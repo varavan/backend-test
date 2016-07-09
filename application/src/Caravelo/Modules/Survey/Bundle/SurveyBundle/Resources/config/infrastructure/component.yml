@@ -1,0 +1,22 @@
+parameters:
+  caravelo_survey_db_directory: "%kernel.root_dir%/../src/Caravelo/Modules/Survey/Infrastructure/assets/db/"
+services:
+    caravelo.modules.survey.infrastructure.component.db.answers_filesystem:
+        class: Caravelo\Modules\Survey\Infrastructure\Component\FilesystemYmlReader
+        arguments:
+          - "%caravelo_survey_db_directory%answers.yml"
+
+    caravelo.modules.survey.infrastructure.component.db.questions_filesystem:
+        class: Caravelo\Modules\Survey\Infrastructure\Component\FilesystemYmlReader
+        arguments:
+          - "%caravelo_survey_db_directory%questions.yml"
+
+    caravelo.modules.survey.infrastructure.component.db.surveys_filesystem:
+        class: Caravelo\Modules\Survey\Infrastructure\Component\FilesystemYmlReader
+        arguments:
+          - "%caravelo_survey_db_directory%surveys.yml"
+
+    caravelo.modules.survey.infrastructure.component.db.tags_filesystem:
+        class: Caravelo\Modules\Survey\Infrastructure\Component\FilesystemYmlReader
+        arguments:
+          - "%caravelo_survey_db_directory%tags.yml"

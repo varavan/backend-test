@@ -1,0 +1,17 @@
+tag-1:
+  name: Tag 1
+  description: This is a descrpition
+  survey: survey-1
+  createdAt: "2016-08-09T12:30:00"
+
+tag-2:
+  name: Tag 2
+  description: This is a descrpition
+  survey: survey-2
+  createdAt: "2016-08-09T12:30:00"
+
+tag-3:
+  name: Tag 3
+  description: This is a descrpition
+  survey: survey-3
+  createdAt: "2016-08-09T12:30:00"

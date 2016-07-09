@@ -1,0 +1,5 @@
+services:
+  caravelo.api.businesscase.get_surveys:
+    class: Caravelo\Bundle\ApiBundle\BusinessCase\GetSurveysBusinessCase
+    arguments:
+      - "@caravelo.modules.survey.domain.service.survey"

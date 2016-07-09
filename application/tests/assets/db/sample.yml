@@ -1,0 +1,11 @@
+sample-db-1:
+  id: 1
+  name: Sample db 1
+  slug: sample-db-1
+  createdAt: "2016-08-09T12:30:00"
+
+sample-db-2:
+  id: 2
+  name: Sample db 2
+  slug: sample-db-2
+  createdAt: "2016-08-09T12:30:00"

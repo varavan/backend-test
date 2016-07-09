@@ -1,0 +1,17 @@
+survey-1:
+  name: Survey 1
+  slug: survey-1
+  description: No relevant content
+  createdAt: "2016-08-09T12:30:00"
+
+survey-2:
+  name: Survey 2
+  slug: survey-2
+  description: No relevant content
+  createdAt: "2016-08-09T12:30:00"
+
+survey-3:
+  name: Survey 3
+  slug: survey-3
+  description: No relevant content
+  createdAt: "2016-08-09T12:30:00"

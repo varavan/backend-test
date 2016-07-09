@@ -1,0 +1,5 @@
+services:
+    caravelo.modules.survey.infrastructure.factory.answer_factory:
+        class: Caravelo\Modules\Survey\Infrastructure\Factory\AnswerFactory
+        arguments:
+          - "@caravelo.modules.survey.infrastructure.component.db.answers_filesystem"

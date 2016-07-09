@@ -1,0 +1,18 @@
+services:
+    caravelo.modules.survey.infrastructure.repository.question_repository:
+      class: Caravelo\Modules\Survey\Infrastructure\Repository\QuestionRepositoryFilesystem
+      arguments:
+        - "@caravelo.modules.survey.infrastructure.component.db.questions_filesystem"
+        - "@caravelo.modules.survey.infrastructure.factory.answer_factory"
+
+    caravelo.modules.survey.infrastructure.repository.tag_repository:
+      class: Caravelo\Modules\Survey\Infrastructure\Repository\TagRepositoryFilesystem
+      arguments:
+        - "@caravelo.modules.survey.infrastructure.component.db.tags_filesystem"
+
+    caravelo.modules.survey.domain.repository.survey_repository:
+      class: Caravelo\Modules\Survey\Infrastructure\Repository\SurveyRepositoryFilesystem
+      arguments:
+        - "@caravelo.modules.survey.infrastructure.component.db.surveys_filesystem"
+        - "@caravelo.modules.survey.infrastructure.repository.question_repository"
+        - "@caravelo.modules.survey.infrastructure.repository.tag_repository"

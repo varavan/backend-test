@@ -1,0 +1,10 @@
+imports:
+    - { resource: infrastructure/factory.yml }
+    - { resource: infrastructure/component.yml }
+    - { resource: infrastructure/repository.yml }
+
+services:
+    caravelo.modules.survey.domain.service.survey:
+      class: Caravelo\Modules\Survey\Domain\Service\SurveyService
+      arguments:
+       - "@caravelo.modules.survey.domain.repository.survey_repository"
