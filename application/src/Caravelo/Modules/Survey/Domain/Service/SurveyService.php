@@ -16,15 +16,22 @@ class SurveyService
         $this->surveyRepositoryInterface = $surveyRepositoryInterface;
     }
 
+    /**
+     * @return \Caravelo\Modules\Survey\Domain\Model\Survey[]
+     */
     public function getSurveys()
     {
 
         return $this->surveyRepositoryInterface->findAll();
     }
 
+    /**
+     * @param $slug
+     * @return \Caravelo\Modules\Survey\Domain\Model\Survey | false
+     */
     public function getSurvey($slug)
     {
-        return $this->getSurvey($slug);
+        return $this->surveyRepositoryInterface->findOneBySlug($slug);
     }
 
 }

@@ -7,3 +7,7 @@ with pure test purposes. Non production ready
 ## Symfony
 
 App is based on symfony2 as a playground for DDD.
+
+## Test suite
+
+run `vendor/phpunit/phpunit/phpunit` on this folder

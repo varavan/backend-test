@@ -3,3 +3,8 @@ services:
     class: Caravelo\Bundle\ApiBundle\BusinessCase\GetSurveysBusinessCase
     arguments:
       - "@caravelo.modules.survey.domain.service.survey"
+
+  caravelo.api.businesscase.get_survey:
+    class: Caravelo\Bundle\ApiBundle\BusinessCase\GetSurveyBusinessCase
+    arguments:
+      - "@caravelo.modules.survey.domain.service.survey"
