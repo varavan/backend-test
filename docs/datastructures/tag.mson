@@ -1,0 +1,5 @@
+## Tag
++ name: Tag (string)
++ slug: tag (string)
++ description: Tag for test purposes (string)
++ createdAt: `2020-05-05T12:30:00` (string)

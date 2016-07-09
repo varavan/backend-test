@@ -1,0 +1,7 @@
+## Poll
++ id: 37 (number)
++ name: John Mayer (string)
++ email: john.mayer@example.com (string)
++ answers (array[Answer])
++ survey (Survey)
++ createdAt: `2020-05-05T12:30:00` (string)

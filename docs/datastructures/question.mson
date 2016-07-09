@@ -1,0 +1,5 @@
+## Question
++ id: 50 (number)
++ title: This is a test title (string)
++ answers (array[Answer])
++ createdAt: `2020-05-05T12:30:00` (string)

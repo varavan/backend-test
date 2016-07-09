@@ -1,0 +1,7 @@
+## Survey
++ name: Test survey (string)
++ slug: test-survey (string)
++ description: This is test survey (string)
++ tags (array[Tag])
++ questions (array[Question])
++ createdAt: `2020-05-05T12:30:00` (string)
