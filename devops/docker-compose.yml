@@ -1,0 +1,8 @@
+application:
+    build: php
+    volumes:
+        - ../application:/var/www/symfony
+    tty: true
+    ports:
+            - 8000:8000
+    command: "sh /home/root/server.sh"
