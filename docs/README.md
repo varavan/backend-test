@@ -1,6 +1,6 @@
-# How to work with API
+# API Blueprint document for Caravelo test implementation of Markey Survey
 
-Just follow [Blueprint API examples](https://github.com/apiaryio/api-blueprint/tree/master/examples)
+Documentation ApiDoc following [Blueprint API](https://github.com/apiaryio/api-blueprint). Build and see the output html for full experience
 
 ## how to build documentation
 
@@ -8,7 +8,7 @@ Just follow [Blueprint API examples](https://github.com/apiaryio/api-blueprint/t
 
 `grunt build`
 
-you can see the result on dist/latest.html
+you can see the result @ `dist/latest.html`
 
 tested on node v4.4.5
 
@@ -17,9 +17,3 @@ tested on node v4.4.5
 + upagrade/downgrade node to v4.4.5 LTS
 + remove `node_modules`
 + `npm install`
-
-
-## usefull commands
-
-+ `grunt build` create all documentation
-+ `grunt serve` development purposes 
