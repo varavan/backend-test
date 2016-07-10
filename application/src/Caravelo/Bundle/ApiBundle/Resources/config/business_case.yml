@@ -3,6 +3,7 @@ services:
     class: Caravelo\Bundle\ApiBundle\BusinessCase\GetSurveysBusinessCase
     arguments:
       - "@caravelo.modules.survey.domain.service.survey"
+      - "@caravelo.api.component.survey_match_filter"
 
   caravelo.api.businesscase.get_survey:
     class: Caravelo\Bundle\ApiBundle\BusinessCase\GetSurveyBusinessCase

@@ -2,6 +2,7 @@
 
 namespace Caravelo\Bundle\ApiBundle\BusinessCase;
 
+use Caravelo\Bundle\ApiBundle\Component\SurveyMatchTagFilter;
 use Caravelo\Bundle\ApiBundle\Model\SurveyDto;
 use Caravelo\Bundle\ApiBundle\Model\TagDto;
 use Caravelo\Modules\Survey\Domain\Service\SurveyService;
@@ -12,10 +13,17 @@ class GetSurveysBusinessCase
      * @var SurveyService
      */
     private $surveyService;
+    /**
+     * @var SurveyMatchTagFilter
+     */
+    private $surveyMatchTagFilter;
 
-    public function __construct(SurveyService $surveyService)
+    public function __construct(
+        SurveyService $surveyService,
+        SurveyMatchTagFilter $surveyMatchTagFilter)
     {
         $this->surveyService = $surveyService;
+        $this->surveyMatchTagFilter = $surveyMatchTagFilter;
     }
 
     /**
@@ -34,34 +42,10 @@ class GetSurveysBusinessCase
         }
 
         if ($tagSlug != false) {
-            $surveysDto = array_filter(
-                $surveysDto,
-                function (SurveyDto $surveyDto) use ($tagSlug) {
-                    return $this->checkIfTagSlugExists($surveyDto, $tagSlug);
-                });
+
+            $surveysDto = $this->surveyMatchTagFilter->filter($surveysDto, $tagSlug);
         }
 
         return $surveysDto;
-    }
-
-
-    /**
-     * @param SurveyDto $surveyDto
-     * @param $tagSlug
-     * @return bool
-     */
-    private function checkIfTagSlugExists(SurveyDto $surveyDto, $tagSlug)
-    {
-        $val = false;
-        array_walk(
-            $surveyDto->tags,
-            function (TagDto $tagDto) use (&$val, $tagSlug) {
-                if ($tagDto->slug == $tagSlug) {
-                    $val = true;
-                }
-            }
-        );
-
-        return $val;
     }
 }

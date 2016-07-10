@@ -1,0 +1,3 @@
+services:
+  caravelo.api.component.survey_match_filter:
+    class: Caravelo\Bundle\ApiBundle\Component\SurveyMatchTagFilter
