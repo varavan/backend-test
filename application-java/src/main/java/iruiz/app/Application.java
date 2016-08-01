@@ -1,14 +1,25 @@
-package app;
+package iruiz.app;
 
 import java.util.Arrays;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = { 
+		"iruiz.app.factory",
+		"iruiz.app.dto",
+		"iruiz.app.businesscase",
+		"iruiz.survey.domain.service",
+		"iruiz.survey.domain.model",
+		"iruiz.survey.domain.repository",
+		"iruiz.survey.infrastructure.repository",
+		"iruiz.app.controller"
+		
+		}
+)
 public class Application {
     
     public static void main(String[] args) {

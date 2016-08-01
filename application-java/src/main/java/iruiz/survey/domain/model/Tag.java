@@ -1,4 +1,4 @@
-package survey.domain.model;
+package iruiz.survey.domain.model;
 
 public final class Tag {
 	

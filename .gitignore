@@ -22,3 +22,14 @@ docs/node_modules
 /application!var/SymfonyRequirements.php
 /application/vendor/
 /application/web/bundles/
+
+
+
+#application java
+/application-java/build/*
+/application/target/*
+/application-java/.gradle/
+/application-java/.settings/
+/application-java/bin/
+
+/assigment/*

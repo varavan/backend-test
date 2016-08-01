@@ -1,4 +1,4 @@
-package survey.domain.model;
+package iruiz.survey.domain.model;
 
 public class Answer {
 	private String id;

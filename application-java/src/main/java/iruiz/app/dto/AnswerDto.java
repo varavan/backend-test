@@ -1,4 +1,4 @@
-package dto;
+package iruiz.app.dto;
 
 public class AnswerDto {
 	public String id;
