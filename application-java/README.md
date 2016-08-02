@@ -12,6 +12,7 @@ There are some API contracts broken because of the `router` configuration.Routes
 - /surveys
 - /survey?slug=$SLUG
 
+I uploaded the build in orer to easy the execution of the container, but can build with `gradle` like `gradle build`
 
 ## Tests 
 
