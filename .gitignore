@@ -31,5 +31,4 @@ docs/node_modules
 /application-java/.gradle/
 /application-java/.settings/
 /application-java/bin/
-
-/assigment/*
+/application-java/*.log

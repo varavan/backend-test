@@ -1,9 +1,7 @@
 package iruiz.app.businesscase;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-
 import iruiz.app.dto.SurveyDto;
 import iruiz.app.factory.SurveyDtoFactory;
 import iruiz.survey.domain.model.Survey;
@@ -14,11 +12,7 @@ public class GetSurveyBusinessCase {
 	
 	private SurveyService surveyService;
 	private SurveyDtoFactory surveyDtoFactory;
-	
-	public GetSurveyBusinessCase(){
-		
-	}
-	
+
 	@Autowired
 	public void injectSurveyService(SurveyService surveyService){
 		this.surveyService = surveyService;
@@ -34,6 +28,6 @@ public class GetSurveyBusinessCase {
 		
 		Survey survey = this.surveyService.getSurvey(slug);
 		
-		return this.surveyDtoFactory.makeFromSurveyModel(survey);
+		return (survey == null) ? null : this.surveyDtoFactory.makeFromSurveyModel(survey);
 	}
 }

@@ -2,14 +2,12 @@ package iruiz.survey.infrastructure.repository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.springframework.stereotype.Component;
-
-import iruiz.app.dto.SurveyDto;
 import iruiz.survey.domain.model.Answer;
 import iruiz.survey.domain.model.Question;
 import iruiz.survey.domain.model.Survey;
 import iruiz.survey.domain.repository.SurveyRepositoryInterface;
+import iruiz.utils.Slugify;
 
 @Component
 public class MockSurveyRepository implements SurveyRepositoryInterface{
@@ -22,12 +20,11 @@ public class MockSurveyRepository implements SurveyRepositoryInterface{
 	@Override
 	public Survey findOneBySlug(String slug) {
 		ArrayList<Survey> surveys = this.getAllMockedData();
-		
 		Survey survey = null;
-		
+		slug = Slugify.toSlug(slug);
 		for(Iterator<Survey> i = surveys.iterator(); i.hasNext(); ){
 			Survey surveyToCheck = i.next();
-			if(survey.getSlug() == slug){
+			if(surveyToCheck.getSlug().equals(slug)){
 				survey = surveyToCheck;
 			}
 		}
@@ -36,17 +33,18 @@ public class MockSurveyRepository implements SurveyRepositoryInterface{
 	}
 	
 	private ArrayList<Survey> getAllMockedData(){
-		ArrayList<Survey> surveys = null;
+		ArrayList<Survey> surveys = new ArrayList<Survey>();
 		
-		int factor = 0;
-	     while ( factor <= 9 ) {
-	    	 Survey survey = new Survey("test survey " + factor, "an description", "2014-06-01");
+	     for (int rootCounter = 1; rootCounter <= 9; rootCounter++ ) {
+	    	 Survey survey = new Survey("test survey " + rootCounter, "an description", "2014-06-01");
 	    	 
 	    	 for (int surveyIterator = 1; surveyIterator <= 4; surveyIterator++){
 	    		 Question question = new Question("any question name", "any description name", "2014-06-01");
 	    		 
 	    		 for (int questionIterator = 1; surveyIterator <= 5; surveyIterator++){
-		    		 question.addAnswer(new Answer("10" + factor + surveyIterator + questionIterator, "content", "2015-06-01"));
+	    			 String title = "10" + rootCounter + surveyIterator + questionIterator;
+	    			 Answer answer = new Answer(title, "content", "2015-06-01");
+		    		 question.addAnswer(answer);
 		    		 survey.addQuestion(question);
 		    	 }
 	    		 
@@ -54,10 +52,8 @@ public class MockSurveyRepository implements SurveyRepositoryInterface{
 	    	 }
 	    	 
 	    	 surveys.add(survey);
-	    	 
-	         factor++;
 	      }
-		
+	     
 		return surveys;
 		
 	}

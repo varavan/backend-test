@@ -18,6 +18,8 @@ public final class Survey {
 		this.slug = Slugify.toSlug(name);
 		this.description = description;
 		this.createdAt = createdAt;
+		this.questions = new ArrayList<Question>();
+		this.tags = new ArrayList<Tag>();
 	}
 	
 	public void addTag(Tag tag){

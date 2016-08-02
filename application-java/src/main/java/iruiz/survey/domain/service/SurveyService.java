@@ -1,20 +1,13 @@
 package iruiz.survey.domain.service;
 
 import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-
 import iruiz.survey.domain.model.Survey;
 import iruiz.survey.domain.repository.SurveyRepositoryInterface;
 
 @Service
 public class SurveyService {
-	
-	public SurveyService(){
-		
-	}
 	
 	private SurveyRepositoryInterface surveyRepositoryInterface;
 	
@@ -24,9 +17,7 @@ public class SurveyService {
 	}
 	
 	public ArrayList<Survey> getSurveys(){
-		
 		return this.surveyRepositoryInterface.findAll();
-
 	}
 	
 	public Survey getSurvey(String slug){
