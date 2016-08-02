@@ -4,5 +4,11 @@ application:
         - ../application:/var/www/symfony
     tty: true
     ports:
-            - 8000:8000
+        - 8000:8000
     command: "sh /home/root/server.sh"
+
+application-java:
+    build: java
+    ports:
+        - 8080:8080
+    command: "java -jar /appdata/build.jar"
