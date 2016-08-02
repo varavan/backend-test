@@ -7,6 +7,11 @@ As long as the architechture of previous project was good enought, this java imp
 
 Java is not my main language, I  used java for small cloud solutions with AWS. I never used it as a web server so spring is somehow new to me. But I consider myself as a fanatic learning, with a SOLID knowleadge about software engineering so I am able to write for any enviorment, besides some time  to learn tricky points of a language.
 
+There are some API contracts broken because of the `router` configuration.Routes are:
+
+- /surveys
+- /survey?slug=$SLUG
+
 
 ## Tests 
 
@@ -19,3 +24,4 @@ This project is lacking some basic tests, if it was a production tests I would p
 - Test utils like `Slugify`
 - Test survey infrastructure
 - Test suvey service
+- Test Json Transformer

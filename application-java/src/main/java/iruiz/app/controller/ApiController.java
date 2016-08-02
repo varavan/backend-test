@@ -52,7 +52,7 @@ public class ApiController {
 		SurveyDto survey = this.getSurveyBusinessCase.getSurvey(slug);
 		
         return (survey == null )
-        		? "Not found"
+        		? "Not found" // should return 404
         	    : SurveyDtoToJsonTransformer.transform(survey);
     }
 	
